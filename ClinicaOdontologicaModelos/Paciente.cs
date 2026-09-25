@@ -42,6 +42,12 @@ namespace ClinicaOdontologicaModelos
         [MaxLength(10)]
         [Column("telefono")]
         public string? Telefono { get; set; }
+
+        // Navegación historial médico
+        public virtual HistorialMedico? HistorialMedico { get; set; }
+
+        // relación con citas
+        public List<Cita> Citas { get; set; } = new List<Cita>();
     }
 }
 

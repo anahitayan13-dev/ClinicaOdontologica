@@ -9,7 +9,7 @@ namespace ClinicaOdontologicaModelos
     public class HistorialMedico
     {
         [Key]
-        [Column("id_historial", TypeName = "Serial")]
+        [Column("id_historial")]
         public int IdHistorialMedico { get; set; }
 
         [Column("alergias")]
@@ -29,5 +29,5 @@ namespace ClinicaOdontologicaModelos
         public int IdPaciente { get; set; }
         public Paciente? paciente { get; set; }
     }
-    }
+    
 }
