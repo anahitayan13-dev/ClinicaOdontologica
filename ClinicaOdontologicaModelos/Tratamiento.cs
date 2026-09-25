@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
+using System.Text.Json.Serialization;
 
 namespace ClinicaOdontologicaModelos
 {
@@ -34,6 +35,7 @@ namespace ClinicaOdontologicaModelos
         public TimeOnly duracioonEstimadaMinutos { get; set; }
 
         // relación con detalles de cita
+        [JsonIgnore]
         public List<DetalleCita> DetallesCita { get; set; } = new List<DetalleCita>();
 
 

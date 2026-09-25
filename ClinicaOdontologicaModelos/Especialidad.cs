@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace ClinicaOdontologicaModelos
 {
@@ -25,6 +26,7 @@ namespace ClinicaOdontologicaModelos
         public string? Descripcion { get; set; }
 
         // relación con odontólogos
+        [JsonIgnore]
         public List<Odontologo> Odontologos { get; set; } = new List<Odontologo>();
     }
 }

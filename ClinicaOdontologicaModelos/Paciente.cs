@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace ClinicaOdontologicaModelos
 {
@@ -44,9 +45,11 @@ namespace ClinicaOdontologicaModelos
         public string? Telefono { get; set; }
 
         // Navegación historial médico
+        [JsonIgnore]
         public virtual HistorialMedico? HistorialMedico { get; set; }
 
         // relación con citas
+        [JsonIgnore]
         public List<Cita> Citas { get; set; } = new List<Cita>();
     }
 }

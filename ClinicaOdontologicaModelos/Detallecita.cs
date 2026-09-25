@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace ClinicaOdontologicaModelos
 {
@@ -20,11 +21,16 @@ namespace ClinicaOdontologicaModelos
         [ForeignKey("cita")]
         [Column("id_cita")]
         public int IdCita { get; set; }
+        [JsonIgnore]
+
         public Cita? cita { get; set; }
 
         [ForeignKey("tratamiento")]
         [Column("id_tratamiento")]
+
         public int IdTratamiento { get; set; }
+        [JsonIgnore]
+
         public Tratamiento? tratamiento { get; set; }
     }
 }

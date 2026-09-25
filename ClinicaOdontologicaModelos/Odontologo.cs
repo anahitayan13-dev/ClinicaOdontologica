@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace ClinicaOdontologicaModelos
 {
@@ -32,11 +33,11 @@ namespace ClinicaOdontologicaModelos
 
         // Navegación
         [ForeignKey("IdEspecialidad")]
-        public Especialidad Especialidad { get; set; }
-
-        
+        [JsonIgnore]
+        public Especialidad? Especialidad { get; set; }
 
         // relación con citas
+        [JsonIgnore]
         public List<Cita> Cita { get; set; } = new List<Cita>();
     }
 }

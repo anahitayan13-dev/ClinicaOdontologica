@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace ClinicaOdontologicaModelos
 {
@@ -37,24 +38,28 @@ namespace ClinicaOdontologicaModelos
         public int IdConsultorio { get; set; }
 
         // Navegación
+        [JsonIgnore]
         [ForeignKey("IdPaciente")]
-        public Paciente Paciente { get; set; }
+        public Paciente? Paciente { get; set; }
 
+        [JsonIgnore]
         [ForeignKey("IdOdontologo")]
-        public Odontologo Odontologo { get; set; }
+        public Odontologo? Odontologo { get; set; }
 
+        [JsonIgnore]
         [ForeignKey("IdConsultorio")]
-        public Consultorio Consultorio { get; set; }
-
+        public Consultorio? Consultorio { get; set; }
 
         //relaciones detallecita
+        [JsonIgnore]
         public List<DetalleCita> DetallesCita { get; set; } = new List<DetalleCita>();
 
         // Navegación cita
-        public virtual Factura Factura { get; set; }
+        [JsonIgnore]
+        public virtual Factura? Factura { get; set; }
 
         // relacion con recetas
+        [JsonIgnore]
         public List<Receta>? Recetas { get; set; } = new List<Receta>();
     }
-
 }
