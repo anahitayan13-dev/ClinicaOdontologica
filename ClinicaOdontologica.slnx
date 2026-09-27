@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="../ClinicaOdontologicaAPI/ClinicaOdontologica.Consumer/ClinicaOdontologica.Consumer.csproj" />
+  <Project Path="../ClinicaOdontologicaAPI/ClinicaOdontologicaAPI/ClinicaOdontologicaAPI.csproj" />
+  <Project Path="../ClinicaOdontologicaAPI/ClinicaOdontologicaMVC/ClinicaOdontologicaMVC.csproj" />
   <Project Path="ClinicaOdontologicaModelos/ClinicaOdontologicaModelos.csproj" />
 </Solution>
